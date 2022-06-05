@@ -1,0 +1,54 @@
+.feed{
+    flex: 0.6;
+    margin: 0 20px;
+}
+.feed__inputContainer{
+ background-color: white;
+ border-radius: 10px;
+ padding: 10px;
+ padding-bottom: 20px;
+ margin-bottom: 20px;
+
+}
+.feed__input{
+    border: 1px solid lightgray;
+    border-radius: 20px;
+    display: flex;
+    padding: 10px;
+    padding-left: 15px;
+    color: gray;
+}
+.feed__input>form{
+    display: flex;
+    width: 100%;
+}
+.feed__input>form>input{
+    border: none;
+    flex: 1;
+    margin-left: 10px;
+    outline-width:0 ;
+    font-weight:600;
+}
+ .feed__input>form>button{
+     display: none;
+ }
+ .feed__inputOption{
+
+    display: flex;
+    justify-content: space-evenly;
+    
+ }
+ .inputOption{
+     display: flex;
+     align-items: center;
+     color: gray;
+     padding: 10px;
+     cursor: pointer;  
+ }
+ .inputOption:hover{
+ color:  black;
+ }
+ .inputOption>h4{
+margin-left: 5px;
+
+ }
