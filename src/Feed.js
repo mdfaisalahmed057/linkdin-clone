@@ -13,19 +13,20 @@ import { db } from './firebase'
 import firebase from 'firebase/compat/app';
 import 'firebase/compat/auth';
 import 'firebase/compat/firestore';
+import FlipMove from 'react-flip-move';
 function Feed() {
   const [input, setInput] = useState('')
   const [posts, setPosts] = useState([]);
 
   useEffect(() => {
-    db.collection("posts").onSnapshot((snapshot) => {
+    db.collection("posts").orderBy('timestamp','desc').onSnapshot((snapshot) => 
       setPosts(
         snapshot.docs.map((doc) => ({
           id: doc.id,
-          data: doc.data
+          data: doc.data(),
         }))
       )
-    })
+    );
 
   }, [])
   const sendPost = (e) => {
@@ -37,6 +38,7 @@ function Feed() {
       photoUrl: "",
       timestamp: firebase.firestore.FieldValue.serverTimestamp()
     })
+    setInput('')
   }
   return (
     <div className='feed'>
@@ -45,7 +47,7 @@ function Feed() {
           <CreateIcon />
           <form>
             <input value={input} onChange={e => setInput(e.target.value)} type="text" />
-            <button type="submit" onClick={sendPost}> send</button>
+            <button onClick={sendPost} type="submit" > send</button>
 
           </form>
         </div>
@@ -58,11 +60,18 @@ function Feed() {
         </div>
 
       </div>
-      {posts.map((post) => (
-        <Post />
+      <FlipMove>
+      {posts.map(({id,data:{name,description,message,photoUrl}})=>(
+        <Post
+        key={id}
+        name={name}
+        description={description}
+        message={message}
+        photoUrl={photoUrl}/>
       ))}
 
-
+      </FlipMove>
+      
     </div>
   )
 }
