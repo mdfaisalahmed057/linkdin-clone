@@ -14,7 +14,12 @@ import firebase from 'firebase/compat/app';
 import 'firebase/compat/auth';
 import 'firebase/compat/firestore';
 import FlipMove from 'react-flip-move';
+import { selectuser } from './features/userSlice'
+import { useSelector } from 'react-redux';
+
 function Feed() {
+  const user=useSelector(selectuser)
+
   const [input, setInput] = useState('')
   const [posts, setPosts] = useState([]);
 
@@ -32,10 +37,10 @@ function Feed() {
   const sendPost = (e) => {
     e.preventDefault();
     db.collection("posts").add({
-      name: "faisal",
-      description: "this is fine",
+      name:user.displayName ,
+      description:  user.email,
       message: input,
-      photoUrl: "",
+      photoUrl: user.photoUrl||"",
       timestamp: firebase.firestore.FieldValue.serverTimestamp()
     })
     setInput('')

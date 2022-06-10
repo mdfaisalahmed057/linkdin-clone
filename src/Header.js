@@ -7,8 +7,18 @@ import ChatIcon from '@mui/icons-material/Chat';
 import NotificationsIcon from '@mui/icons-material/Notifications';
 import WorkIcon from '@mui/icons-material/Work';
 import HeaderOption from './HeaderOption';
+import {auth} from './firebase'
+import { useDispatch } from 'react-redux';
+import {logout} from './features/userSlice';
 
 function Header() {
+    const dispatch=useDispatch()
+    const logoutApp=()=>{
+        dispatch(logout())
+            auth.signOut()
+        
+ 
+    }
     return (
         <>
             <div className='header'>
@@ -28,8 +38,8 @@ function Header() {
                     <HeaderOption Icon={ChatIcon} title="Chat" />
                     <HeaderOption Icon={NotificationsIcon} title="My network" />
                     <HeaderOption Icon={WorkIcon} title="Jobs" />
-                    <HeaderOption avatar='https://img.freepik.com/free-vector/mysterious-mafia-man-smoking-cigarette_52683-34828.jpg?size=338&ext=jpg&ga=GA1.2.434993186.1654322310'
-                     title="me" />
+                    <HeaderOption    avatar={true}
+                         title="logout" onClick={logoutApp}/>
 
                 </div>
             </div>

@@ -5,5 +5,9 @@
  }
 .app__body{
     display: flex;
+    margin-left: 20px;
+    margin-right: 20px;
+    max-width: 1200px;
+    margin-top: 35px;
     
 }
