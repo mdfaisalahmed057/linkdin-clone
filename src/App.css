@@ -1,13 +1,17 @@
 .app{
       display: flex;
-    background-color: #f3f2ef;
+     background-color: #f3f2ef;
     flex-direction: column;
+    flex-wrap: wrap;
  }
 .app__body{
     display: flex;
-    margin-left: 20px;
+     margin-left: 20px;
     margin-right: 20px;
     max-width: 1200px;
     margin-top: 35px;
-    
+    flex-wrap: wrap;
+
 }
+/* For screen size more than 400px */
+ 

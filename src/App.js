@@ -11,18 +11,16 @@ import { useDispatch } from 'react-redux';
 import { useSelector } from 'react-redux';
 import Widget from './Widget';
 
- 
-
-
 function App() {
   const user=useSelector(selectuser)
   const dispatch=useDispatch()
+  
   useEffect(()=>{
     auth.onAuthStateChanged((userAuth)=>{
  if(userAuth){
   dispatch(
     login({
-    email:userAuth .email,
+    email:userAuth.email,
     uid:userAuth.uid,
     displayName:userAuth.displayName,
     photoURL:userAuth.profilePic,

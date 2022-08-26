@@ -1,11 +1,11 @@
 .sidebar{
     position: sticky;
     top: 80px;
-    flex:0.2;
+    flex:0.3;
     border-radius: 10px;
     text-align: center;
     height: fit-content;
-    margin-left: 10px;
+    margin-left: 30px;
  }
 .sidebar__avatar{
     margin-top: 10px;
@@ -73,3 +73,20 @@
 .sidebar__bottom:hover{
     background-color: whitesmoke;
 }
+
+.sidebar{
+    display: block;
+  }
+  
+  /* .cat {
+    display: none;
+  } */
+  
+  @media (max-width:600px) {
+    .sidebar {
+      display: none;
+    }
+    /* .cat {
+      display: block;
+    } */
+  }

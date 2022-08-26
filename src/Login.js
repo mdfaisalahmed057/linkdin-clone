@@ -28,8 +28,9 @@ auth.signInWithEmailAndPassword(email,password)
 
 }).catch((error)=>alert(error))
     }
+    
     const  register=()=>
-    {
+     {
       if(!name){
          alert("please enter the full name")
       }

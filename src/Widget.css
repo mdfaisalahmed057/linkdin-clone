@@ -2,11 +2,13 @@
   position: sticky;
   top: 80px;
   flex: 0.2;
+  justify-content: end;
   background-color: white;
   border-radius: 10px;
   border: 1px solid lightgray;
   height: fit-content;
   padding-bottom: 10px;
+  padding-left: 120p;
 }
 .widgets__header{
     display: flex;
@@ -44,3 +46,20 @@
     color: gray;
     font-size: 12px;
 }
+
+.widgets{
+    display: block;
+  }
+  
+  /* .cat {
+    display: none;
+  } */
+  
+  @media (max-width:600px) {
+    .widgets {
+      display: none;
+    }
+    /* .cat {
+      display: block;
+    } */
+  }

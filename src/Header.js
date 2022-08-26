@@ -16,8 +16,6 @@ function Header() {
     const logoutApp=()=>{
         dispatch(logout())
             auth.signOut()
-        
- 
     }
     return (
         <>
@@ -28,7 +26,7 @@ function Header() {
 
                     <div className='header__search'>
                         <SearchIcon />
-                        <input type='text' placeholder='Search.....' />
+                        <input className="input-header" type='text' placeholder='Search.....' />
                     </div>
                 </div>
 
