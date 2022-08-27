@@ -18,7 +18,7 @@ import 'firebase/compat/firestore';
  import FlipMove from 'react-flip-move';
 import { selectuser } from './features/userSlice'
 import { useSelector } from 'react-redux';
-import Modal from './Modal';
+// import Modal from './Modal';
 
 
 
